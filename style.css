@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Archivo', sans-serif;
+}
+
+:root {
+    --dark-theme: #0d0e0f;
+    --light-theme: #f9f9f9;
+    --primary-bg: linear-gradient(var(--primary), var(--primary));
+}
+
+body {
+    background: var(--dark-theme)
+}
+
+/* Code On About Starts From Here */
+.about{
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 2rem;
+}
+
+.delivery {
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.design {
+    background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.container p {
+    text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+
+  .container {
+    color: #e5e5e5;
+    font-size: 4rem;
+    text-transform: uppercase;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    padding-left: 8rem;
+  }
+  
+  .animation {
+    height:80px;
+    overflow:hidden;
+    margin-left: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  
+  .animation > div > div {
+    padding: 0.5rem 0.6rem;
+    height:2.5rem;
+    margin-bottom: 4rem;
+    display:inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  
+  .animation div:first-child {
+    animation: text-animation 8s infinite;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  
+  @keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -4.8rem;}
+    30% {margin-top: -4.8rem;}
+    40% {margin-top: -11.24rem;}
+    60% {margin-top: -11.24rem;}
+    70% {margin-top: -4.8rem;}
+    80% {margin-top: -4.8rem;}
+    90% {margin-top: 0;}
+    100% {margin-top: 0;}
+  }
+
+h1 {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
+    padding-top: 10rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+/* .header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s ease-in;
+}
+
+.header:hover::after {
+    left: 100%;
+} */
+
+.logo {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+
+#menu-icon {
+    font-size: 1.5rem;
+}
+
+
+/*Navbar Anchor Hover transition begin*/
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.navbar a {
+    /*Change this if you change the number of spans.*/
+    --numberOfSpans: 4;
+    /*Default 500ms*/
+    --transition-speed: 500ms;
+    /*Default 100ms*/
+    --transition-delay: 100ms;
+    /*Make sure width and height are in the ratio of 1:4 
+    
+    that means:
+    "height * number of span elements inside the <anchor>"
+    
+    In the case of improper dimensions the transition will not look good, you can try if you want.
+    */
+    --size: calc(100% / var(--numberOfSpans));
+    height: 2rem;
+    aspect-ratio: 4;
+    /* ^ This ensures that the width is 4x of the height*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color var(--transition-speed);
+    overflow: hidden;
+}
+
+.navbar a span {
+    width: var(--size);
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    inset: 0;
+    left: calc(var(--size) * var(--index));
+    z-index: -1;
+    translate: 0% 150%;
+    scale: 1;
+    background-color: var(--light-theme);
+    border-radius: 100vw;
+    transition: scale var(--transition-speed), translate var(--transition-speed);
+    transition-delay: calc(var(--transition-delay) * (var(--index) + 1));
+    transition-timing-function: ease-in-out;
+}
+
+nav a:hover {
+    color: var(--dark-theme)
+}
+
+nav a:hover span {
+    translate: 0% 0%;
+    scale: 2;
+}
+
+nav a span:nth-child(1) {
+    --index: 0
+}
+
+nav a span:nth-child(2) {
+    --index: 1
+}
+
+nav a span:nth-child(3) {
+    --index: 2
+}
+
+nav a span:nth-child(4) {
+    --index: 3
+}
+
+/*Navbar Anchor Hover transition end*/
+
+/* BREAKPOINTS */
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 12rem;
+    }
+
+    .navbar a {
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease-in-out;
+    } */
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+     }
+}
