@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="about.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- <link rel="icon" type="image/x-icon" href="src/assets/hackqd.png"> -->
+    <link rel="icon" type="image/x-icon" href="hackqd.png"> 
     <title>hackqd</title>
 </head>
 
 <body>
-    <!--<h1>Hi 👋! I'm hackqd.</h1>-->
 
     <!-- Making the Navbar -->
     <header class="header">
-        <!-- LOGO -->
-        <a href="#" class="logo">hackqd</a>
+        
+        <a href="index.html" class="logo">
+            <img src="hackqd.png" alt="hackqd-logo" class="logo-img" height="50px" width="75px"> 
+            <span>hackqd</span>
+        </a>
 
 
-        <input type="checkbox" id="check">
-        <label for="check" class="icons">
-            <i class="fa-solid fa-bars" id="menu-icon"></i>
-            <i class='bx bx-x bx-flashing-hover' id="close-icon"></i>
-        </label>
+          <!-- Hidden Checkbox for toggling the menu -->
+    <input type="checkbox" id="check" hidden> <!-- The 'hidden' attribute hides the checkbox -->
+
+    <!-- Label for the toggle button -->
+    <label for="check" class="icons">
+        <i class="fa-solid fa-bars bx-md" id="menu-icon"></i> <!-- Hamburger icon -->
+        <i class='bx bx-x' id="close-icon"></i> <!-- Close icon -->
+    </label>
 
         <!-- navbar links-->
         <nav class="navbar">
